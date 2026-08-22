@@ -1,53 +1,91 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!-- HEAD -->
-    <title>Nivesh's Website</title>
-    <!-- IMPORTING AOS for srolling pop up effect -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Importing css -->
-    <link rel="stylesheet" href="style.css">
-  </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Our World ❤️</title>
 
-  <body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-    <!-- Section 1 -->
-    <!-- happy birthday wish  -->
-    <div class="section-1">
-      <p> Happy bathday </p>
-    </div>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #2a0015, #000);
+        }
 
-    <!-- Section 2 -->
-    <!-- From kani -->
-    <div class="section-2" 
-      data-aos="fade-up"
-      data-aos-delay="200">
+        .card {
+            width: 350px;
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255,0,100,0.3);
+        }
 
-    </div>
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
 
-    <!-- Section 3 -->
-    <!-- Photos -->
-    <!-- photos of birthday person-->
-    <div class="section-3" 
-      data-aos="fade-up"
-      data-aos-delay="150">
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
 
-    </div>
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(90deg,#ff5c8a,#ff2e63);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-    <!-- Section 4 -->
-    <!-- Gift box -->
-    <div class="section-4" 
-      data-aos="fade-up"
-      data-aos-delay="100"> 
+        button:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
 
-    </div>
+<div class="card">
+    <h1>❤️ Access Our World ❤️</h1>
 
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
+    <button onclick="login()">Unlock Surprise 🎁</button>
+</div>
 
-  </body>
+<script>
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
 
+    if(user === "hername" && pass === "birthday") {
+        window.location.href = "tree.html";
+    } else {
+        alert("Wrong password ❤️");
+    }
+}
+</script>
+
+</body>
 </html>
