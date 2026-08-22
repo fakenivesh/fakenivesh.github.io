@@ -1,0 +1,58 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('https://thumbs.dreamstime.com/b/vibrant-wildflowers-against-soothing-blurred-background-captivating-image-three-flowers-two-red-one-pink-set-serene-379484157.jpg');
+}
+
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: greenyellow;
+}
+
+.section-1 {
+    height: 100vh;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+}
+
+.section-1 p {
+  font-size: 500%;
+  color: navy;
+  text-align: center;
+}
+
+.section-2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: red;
+}
+
+.section-3 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: green;
+}
+
+.section-4 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: blue;
+}
