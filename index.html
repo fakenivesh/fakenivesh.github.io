@@ -1,90 +1,2267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Our World ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<title>Moni's Birthday Surprise 💗</title>
 
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle, #2a0015, #000);
-        }
+<style>
 
-        .card {
-            width: 350px;
-            padding: 30px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            box-shadow: 0 0 30px rgba(255,0,100,0.3);
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        h1 {
-            color: white;
-            margin-bottom: 20px;
-        }
+html,body{
+    width:100%;
+    height:100%;
+    font-family:Arial,sans-serif;
+}
 
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-        }
+body{
+    overflow:hidden;
+    background:#071713;
+}
 
-        button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 30px;
-            background: linear-gradient(90deg,#ff5c8a,#ff2e63);
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-        }
+/* =========================
+   COMMON SCREEN
+========================= */
 
-        button:hover {
-            transform: scale(1.03);
-        }
-    </style>
-</head>
-<body>
+.screen{
+    position:fixed;
+    inset:0;
+    display:none;
+}
 
-<div class="card">
-    <h1>❤️ Access Our World ❤️</h1>
+.screen.active{
+    display:flex;
+}
 
-    <input id="username" placeholder="Username">
-    <input id="password" type="password" placeholder="Password">
 
-    <button onclick="login()">Unlock Surprise 🎁</button>
-</div>
+/* =========================
+   PASSWORD SCREEN
+========================= */
 
-<script>
-function login() {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+#passwordScreen{
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle at 75% 18%,#f5f1c8 0 5%,transparent 5.5%),
+        linear-gradient(145deg,#071713,#102d22 55%,#06110e);
+    overflow:hidden;
+}
 
-    if(user === "hername" && pass === "birthday") {
-        window.location.href = "tree.html";
-    } else {
-        alert("Wrong password ❤️");
+.p-bamboo{
+    position:absolute;
+    inset:0;
+    opacity:.35;
+}
+
+.p-bamboo span{
+    position:absolute;
+    width:13px;
+    height:150%;
+    background:#315d39;
+    border-radius:20px;
+    transform:rotate(8deg);
+}
+
+.p-bamboo span:nth-child(1){
+    left:4%;
+    top:-20%;
+}
+
+.p-bamboo span:nth-child(2){
+    left:13%;
+    top:-15%;
+    transform:rotate(-7deg);
+}
+
+.p-bamboo span:nth-child(3){
+    right:7%;
+    top:-20%;
+    transform:rotate(-9deg);
+}
+
+.p-bamboo span:nth-child(4){
+    right:17%;
+    top:-15%;
+    transform:rotate(7deg);
+}
+
+.p-panel{
+    position:relative;
+    width:min(88%,1100px);
+    height:min(78%,650px);
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    gap:40px;
+    z-index:2;
+}
+
+.panda-area{
+    width:48%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.panda{
+    position:relative;
+    width:245px;
+    height:245px;
+    background:#f7f5ed;
+    border-radius:48%;
+    box-shadow:0 25px 45px rgba(0,0,0,.45);
+}
+
+.panda .ear{
+    position:absolute;
+    width:78px;
+    height:78px;
+    background:#111714;
+    border-radius:50%;
+    top:-27px;
+}
+
+.panda .ear.left{
+    left:10px;
+}
+
+.panda .ear.right{
+    right:10px;
+}
+
+.panda .eye{
+    position:absolute;
+    width:73px;
+    height:88px;
+    background:#151916;
+    border-radius:60% 45% 60% 45%;
+    top:66px;
+}
+
+.panda .eye.left{
+    left:35px;
+    transform:rotate(25deg);
+}
+
+.panda .eye.right{
+    right:35px;
+    transform:rotate(-25deg);
+}
+
+.panda .eye:after{
+    content:"";
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:#fff;
+    border-radius:50%;
+    left:28px;
+    top:27px;
+}
+
+.panda .nose{
+    position:absolute;
+    width:31px;
+    height:23px;
+    background:#111;
+    border-radius:50%;
+    left:calc(50% - 15px);
+    top:137px;
+}
+
+.panda .mouth{
+    position:absolute;
+    width:42px;
+    height:22px;
+    border-bottom:4px solid #111;
+    border-radius:50%;
+    left:calc(50% - 21px);
+    top:154px;
+}
+
+.panda .belly{
+    position:absolute;
+    width:150px;
+    height:110px;
+    background:#111714;
+    border-radius:50%;
+    bottom:-45px;
+    left:calc(50% - 75px);
+}
+
+.panda .paw{
+    position:absolute;
+    width:65px;
+    height:48px;
+    background:#111714;
+    border-radius:50%;
+    bottom:35px;
+}
+
+.panda .paw.left{
+    left:-25px;
+    transform:rotate(25deg);
+}
+
+.panda .paw.right{
+    right:-25px;
+    transform:rotate(-25deg);
+}
+
+.p-login{
+    width:330px;
+    padding:34px 30px;
+    border-radius:28px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    color:white;
+    text-align:center;
+}
+
+.p-login h1{
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.p-login p{
+    font-size:13px;
+    color:#b8d4c1;
+    margin-bottom:25px;
+}
+
+.p-dots{
+    display:flex;
+    justify-content:center;
+    gap:13px;
+    margin-bottom:25px;
+}
+
+.p-dot{
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    border:2px solid #b8d4c1;
+}
+
+.p-dot.active{
+    background:#b8d4c1;
+}
+
+.p-keypad{
+    display:grid;
+    grid-template-columns:repeat(3,58px);
+    justify-content:center;
+    gap:11px;
+}
+
+.p-key{
+    height:58px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.10);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.p-overlay{
+    position:absolute;
+    inset:0;
+    display:none;
+    z-index:20;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    background:radial-gradient(circle,#263f2d,#071713 65%);
+}
+
+.p-overlay.show{
+    display:flex;
+}
+
+.p-overlay .emoji{
+    font-size:80px;
+    margin-bottom:15px;
+}
+
+.p-overlay h2{
+    font-size:34px;
+}
+
+.p-overlay p{
+    color:#a9c3b1;
+    margin:8px 0 25px;
+}
+
+.p-retry{
+    border:0;
+    padding:12px 28px;
+    border-radius:30px;
+    background:#d7e8d4;
+    color:#17331f;
+    font-weight:bold;
+}
+
+
+/* =========================
+   BIRTHDAY SCREEN
+========================= */
+
+#birthdayScreen{
+    align-items:center;
+    justify-content:center;
+    background:#020006;
+    overflow:hidden;
+}
+
+.rain{
+    position:absolute;
+    inset:0;
+}
+
+.drop{
+    position:absolute;
+    top:-160px;
+    color:#ff4c9b;
+    font-size:11px;
+    line-height:17px;
+    white-space:pre;
+    opacity:.7;
+    text-shadow:0 0 10px #ff197d;
+    animation:rainFall linear infinite;
+}
+
+@keyframes rainFall{
+    from{
+        transform:translateY(-160px);
+    }
+    to{
+        transform:translateY(115vh);
     }
 }
+
+.b-scene{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.b-item{
+    position:absolute;
+    color:#ffe4f1;
+    text-shadow:
+        0 0 8px #fff,
+        0 0 20px #ff78b8,
+        0 0 45px #ff1a80;
+    opacity:0;
+    transform:scale(.25);
+}
+
+.b-number{
+    font-size:105px;
+    font-weight:bold;
+}
+
+.b-word{
+    font-family:Georgia,serif;
+    font-style:italic;
+    font-size:clamp(45px,11vw,78px);
+}
+
+.b-one{
+    animation:bCinema 2.8s forwards;
+}
+
+.b-two{
+    animation:bCinema 2.8s 2.4s forwards;
+}
+
+.b-three{
+    animation:bCinema 2.8s 4.8s forwards;
+}
+
+.b-happy{
+    animation:bCinema 3s 7.2s forwards;
+}
+
+.b-birthday{
+    animation:bCinema 3s 9.8s forwards;
+}
+
+@keyframes bCinema{
+
+    0%{
+        opacity:0;
+        transform:scale(.25);
+    }
+
+    18%{
+        opacity:1;
+        transform:scale(1.12);
+    }
+
+    35%,72%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.55);
+    }
+}
+
+
+/* =========================
+   ARROW SCREEN
+========================= */
+
+#arrowScreen{
+    align-items:center;
+    justify-content:center;
+    background:#111;
+    overflow:hidden;
+    font-family:Georgia,serif;
+}
+
+.a-card{
+    width:min(95vw,1100px);
+    height:min(82dvh,700px);
+    position:relative;
+    overflow:hidden;
+    border-radius:38px;
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #ffd5e5,
+            #fff0f5 35%,
+            #fff8f5 70%
+        );
+}
+
+.a-title{
+    position:absolute;
+    top:42px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#765e5e;
+    font-size:22px;
+    font-style:italic;
+    z-index:10;
+    white-space:nowrap;
+}
+
+.a-heart{
+    position:absolute;
+    left:50%;
+    top:30%;
+    transform:translate(-50%,-50%);
+    font-size:105px;
+    z-index:5;
+    filter:
+        drop-shadow(0 0 12px #ff75ac)
+        drop-shadow(0 0 35px #ff75ac);
+    animation:aHeart 3s infinite;
+}
+
+@keyframes aHeart{
+
+    50%{
+        transform:translate(-50%,-58%) scale(1.06);
+    }
+}
+
+.a-hint{
+    position:absolute;
+    bottom:34px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#9b8585;
+    letter-spacing:4px;
+    font-size:11px;
+    z-index:10;
+}
+
+.a-card svg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+#arrowGraphic{
+    filter:drop-shadow(0 4px 4px rgba(0,0,0,.25));
+}
+
+.a-hit{
+    display:none;
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle,#ffd0e1,#fff 65%);
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    z-index:100;
+}
+
+.a-hit.show{
+    display:flex;
+}
+
+.a-hit h1{
+    color:#ff4f96;
+    font-size:clamp(42px,7vw,72px);
+    margin-bottom:20px;
+}
+
+.a-hit p{
+    color:#665;
+    font-size:18px;
+}
+
+
+/* =========================
+   DIARY SCREEN
+========================= */
+
+#diaryScreen{
+    overflow:auto;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e8,
+            #ffeef7,
+            #e4d4ff
+        );
+    font-family:Georgia,serif;
+}
+
+.d-lotus{
+    position:absolute;
+    font-size:60px;
+    opacity:.25;
+    pointer-events:none;
+}
+
+.d1{
+    top:3%;
+    left:3%;
+}
+
+.d2{
+    top:12%;
+    right:5%;
+}
+
+.d3{
+    bottom:8%;
+    left:5%;
+}
+
+.d4{
+    bottom:10%;
+    right:6%;
+}
+
+.d-cover-wrap{
+    width:100%;
+    min-height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.d-cover{
+    width:min(90vw,380px);
+    height:520px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    border-radius:12px 25px 25px 12px;
+    background:linear-gradient(145deg,#b83270,#e45d91);
+    border:5px solid #f7c3d9;
+    box-shadow:0 20px 45px rgba(0,0,0,.3);
+}
+
+.d-cover-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+}
+
+.d-cover-heart{
+    font-size:90px;
+    animation:dBeat 1.5s infinite;
+}
+
+@keyframes dBeat{
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+.d-cover-content h1{
+    font-size:30px;
+}
+
+.d-tap{
+    margin-top:25px;
+}
+
+.d-area{
+    display:none;
+    width:100%;
+    min-height:100%;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px 10px;
+}
+
+#diaryScreen.open .d-cover-wrap{
+    display:none;
+}
+
+#diaryScreen.open .d-area{
+    display:flex;
+}
+
+.d-heading{
+    color:#a83d70;
+    font-size:30px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+
+/* =========================
+   DIARY
+========================= */
+
+.diary{
+    width:min(94vw,650px);
+    height:min(78vh,620px);
+    perspective:1800px;
+    position:relative;
+}
+
+.d-page{
+    position:absolute;
+    inset:0;
+    background:#fffdf5;
+    border-radius:8px 15px 15px 8px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    padding:28px 25px;
+    transform-origin:left center;
+    transition:transform 1s ease;
+    backface-visibility:hidden;
+    border-left:8px solid #d58aa9;
+    overflow:hidden;
+}
+
+.d-page:nth-child(1){
+    z-index:8;
+}
+
+.d-page:nth-child(2){
+    z-index:7;
+}
+
+.d-page:nth-child(3){
+    z-index:6;
+}
+
+.d-page:nth-child(4){
+    z-index:5;
+}
+
+.d-page:nth-child(5){
+    z-index:4;
+}
+
+.d-page:nth-child(6){
+    z-index:3;
+}
+
+.d-page:nth-child(7){
+    z-index:2;
+}
+
+.d-page:nth-child(8){
+    z-index:1;
+}
+
+.d-page.flipped{
+    transform:rotateY(-180deg);
+}
+
+.d-num{
+    text-align:right;
+    color:#c27a99;
+    font-size:13px;
+}
+
+.d-page h2{
+    text-align:center;
+    color:#b04478;
+    font-size:27px;
+    margin-top:5px;
+}
+
+
+/* ==================================================
+   ⭐ IMPORTANT PHOTO SYSTEM ⭐
+   PHOTO-KKU MATCH AAGURA FRAME
+   NO CROP
+   NO SIDE EMPTY SPACE INSIDE FRAME
+================================================== */
+
+.d-photo{
+    /*
+       Frame itself becomes the same size
+       as the displayed photo.
+    */
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:auto;
+    height:auto;
+
+    max-width:88%;
+    max-height:390px;
+
+    margin:18px auto;
+
+    padding:0;
+
+    background:#fff;
+
+    border:8px solid #fff;
+
+    border-radius:5px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.25);
+
+    overflow:hidden;
+}
+
+
+/*
+   Parent center
+*/
+.d-page{
+    text-align:center;
+}
+
+
+/*
+   FULL PHOTO
+   Height and width remain proportional.
+*/
+.d-photo img{
+
+    display:block;
+
+    width:auto;
+    height:auto;
+
+    max-width:100%;
+    max-height:374px;
+
+    object-fit:contain;
+
+    /*
+       IMPORTANT:
+       No fixed width.
+       No fixed height.
+       So portrait photo remains portrait.
+    */
+}
+
+
+/*
+   Different photo shapes automatically work.
+*/
+.d-photo img[src$=".jpg"],
+.d-photo img[src$=".jpeg"],
+.d-photo img[src$=".png"],
+.d-photo img[src$=".webp"]{
+    object-position:center;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.d-page p{
+    color:#555;
+    line-height:1.55;
+    font-size:14px;
+    margin:8px auto;
+    max-width:570px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.d-buttons{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+}
+
+.d-btn{
+    border:none;
+    padding:12px 25px;
+    border-radius:25px;
+    background:#d95b91;
+    color:#fff;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 5px 12px rgba(0,0,0,.2);
+}
+
+.d-btn:disabled{
+    opacity:.4;
+}
+
+
+/* =========================
+   FINAL LETTER
+========================= */
+
+#letterScreen{
+    overflow:auto;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            #ff9a9e,
+            #fad0c4,
+            #d9a7ff
+        );
+}
+
+.f-container{
+    text-align:center;
+}
+
+.f-title{
+    color:#fff;
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.envelope{
+    width:300px;
+    height:200px;
+    position:relative;
+    cursor:pointer;
+    margin:auto;
+}
+
+.env-back{
+    position:absolute;
+    inset:0;
+    background:#ff5f8f;
+    border-radius:10px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.env-flap{
+    position:absolute;
+    top:0;
+    left:0;
+    border-left:150px solid transparent;
+    border-right:150px solid transparent;
+    border-top:105px solid #ff78a0;
+    z-index:4;
+}
+
+.env-front{
+    position:absolute;
+    bottom:0;
+    left:0;
+    border-left:150px solid transparent;
+    border-right:150px solid transparent;
+    border-bottom:105px solid #ff6b96;
+    z-index:3;
+}
+
+.env-heart{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    font-size:55px;
+    z-index:5;
+}
+
+.f-letter{
+    display:none;
+    max-width:700px;
+    margin:25px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
+}
+
+.f-letter.open{
+    display:block;
+}
+
+.f-container.hide{
+    display:none;
+}
+
+.f-letter h1{
+    text-align:center;
+    color:#ff4f81;
+    font-size:30px;
+}
+
+.f-name{
+    text-align:center;
+    color:#d94f8a;
+    font-size:28px;
+    font-weight:bold;
+    margin:8px 0 20px;
+}
+
+.f-letter p{
+    color:#444;
+    font-size:17px;
+    line-height:1.8;
+    margin:14px 0;
+}
+
+.signature{
+    text-align:center;
+    color:#ff4f81!important;
+    font-weight:bold;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .p-panel{
+        width:100%;
+        height:92%;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .panda-area{
+        width:100%;
+        height:40%;
+    }
+
+    .panda{
+        width:175px;
+        height:175px;
+    }
+
+    .panda .ear{
+        width:55px;
+        height:55px;
+        top:-18px;
+    }
+
+    .panda .eye{
+        width:53px;
+        height:65px;
+        top:47px;
+    }
+
+    .panda .eye.left{
+        left:23px;
+    }
+
+    .panda .eye.right{
+        right:23px;
+    }
+
+    .panda .eye:after{
+        width:11px;
+        height:11px;
+        left:21px;
+        top:20px;
+    }
+
+    .panda .nose{
+        top:100px;
+        width:23px;
+        height:17px;
+        left:calc(50% - 11px);
+    }
+
+    .panda .mouth{
+        top:114px;
+        width:32px;
+        left:calc(50% - 16px);
+    }
+
+    .panda .belly{
+        width:110px;
+        height:80px;
+        left:calc(50% - 55px);
+        bottom:-32px;
+    }
+
+    .panda .paw{
+        width:48px;
+        height:36px;
+    }
+
+    .p-login{
+        width:310px;
+        padding:22px;
+    }
+
+    .a-card{
+        width:94vw;
+        height:78dvh;
+        border-radius:28px;
+    }
+
+    .a-title{
+        top:25px;
+        font-size:17px;
+    }
+
+    .a-hint{
+        bottom:24px;
+        font-size:9px;
+    }
+
+    .diary{
+        width:94vw;
+        height:620px;
+    }
+
+    .d-page{
+        padding:20px 12px;
+    }
+
+    .d-heading{
+        font-size:24px;
+    }
+
+    /*
+       Mobile portrait photo:
+       full photo visible,
+       frame follows photo.
+    */
+    .d-photo{
+        max-width:92%;
+        max-height:380px;
+        border-width:6px;
+        margin:14px auto;
+    }
+
+    .d-photo img{
+        max-width:100%;
+        max-height:368px;
+    }
+
+    .d-page h2{
+        font-size:22px;
+    }
+
+    .d-page p{
+        font-size:12.5px;
+        line-height:1.45;
+    }
+
+    .d-buttons{
+        margin-top:14px;
+    }
+
+    .d-btn{
+        padding:10px 17px;
+        font-size:13px;
+    }
+
+    .f-letter{
+        margin:20px 14px;
+        padding:22px;
+    }
+
+    .f-letter p{
+        font-size:15px;
+    }
+}
+
+
+/* VERY SMALL PHONES */
+
+@media(max-width:400px){
+
+    .diary{
+        height:600px;
+    }
+
+    .d-photo{
+        max-height:350px;
+    }
+
+    .d-photo img{
+        max-height:338px;
+    }
+
+    .d-page p{
+        font-size:12px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     1. PASSWORD
+================================================== -->
+
+<section id="passwordScreen" class="screen active">
+
+    <div class="p-bamboo">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="p-panel" id="passwordPanel">
+
+        <div class="panda-area">
+
+            <div class="panda">
+
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div class="nose"></div>
+                <div class="mouth"></div>
+                <div class="belly"></div>
+
+                <div class="paw left"></div>
+                <div class="paw right"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="p-login">
+
+            <h1>🐼 Secret Garden</h1>
+
+            <p>
+                Enter the secret code to continue
+            </p>
+
+            <div class="p-dots">
+
+                <span class="p-dot"></span>
+                <span class="p-dot"></span>
+                <span class="p-dot"></span>
+                <span class="p-dot"></span>
+
+            </div>
+
+
+            <div class="p-keypad">
+
+                <button class="p-key" onclick="pressPass(1)">1</button>
+                <button class="p-key" onclick="pressPass(2)">2</button>
+                <button class="p-key" onclick="pressPass(3)">3</button>
+
+                <button class="p-key" onclick="pressPass(4)">4</button>
+                <button class="p-key" onclick="pressPass(5)">5</button>
+                <button class="p-key" onclick="pressPass(6)">6</button>
+
+                <button class="p-key" onclick="pressPass(7)">7</button>
+                <button class="p-key" onclick="pressPass(8)">8</button>
+                <button class="p-key" onclick="pressPass(9)">9</button>
+
+                <button class="p-key" onclick="clearPass()">⌫</button>
+                <button class="p-key" onclick="pressPass(0)">0</button>
+                <button class="p-key" onclick="checkPass()">✓</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="p-overlay" id="wrongOverlay">
+
+        <div class="emoji">🐼</div>
+
+        <h2>Oops! Wrong Code</h2>
+
+        <p>
+            The panda is still keeping the secret 🤫
+        </p>
+
+        <button class="p-retry" onclick="retryPass()">
+            TRY AGAIN
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     2. BIRTHDAY COUNTDOWN
+================================================== -->
+
+<section id="birthdayScreen" class="screen">
+
+    <div class="rain" id="rain"></div>
+
+    <div class="b-scene">
+
+        <div class="b-item b-number b-one">1</div>
+        <div class="b-item b-number b-two">2</div>
+        <div class="b-item b-number b-three">3</div>
+
+        <div class="b-item b-word b-happy">
+            Happy
+        </div>
+
+        <div class="b-item b-word b-birthday">
+            Birthday
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     3. ARROW
+================================================== -->
+
+<section id="arrowScreen" class="screen">
+
+    <div class="a-card" id="arrowCard">
+
+        <div class="a-title">
+            a little something, for you
+        </div>
+
+        <div class="a-heart">
+            ❤️
+        </div>
+
+        <div class="a-hint" id="arrowHint">
+            TAP ANYWHERE ❤️
+        </div>
+
+
+        <svg
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="xMidYMid meet"
+        >
+
+            <defs>
+
+                <linearGradient id="wood">
+                    <stop offset="0" stop-color="#6b351d"/>
+                    <stop offset=".5" stop-color="#b76a3d"/>
+                    <stop offset="1" stop-color="#5a2d1a"/>
+                </linearGradient>
+
+                <linearGradient id="shaft">
+                    <stop offset="0" stop-color="#5a301f"/>
+                    <stop offset=".6" stop-color="#b97949"/>
+                    <stop offset="1" stop-color="#e6a96d"/>
+                </linearGradient>
+
+                <linearGradient id="gold">
+                    <stop offset="0" stop-color="#d89a20"/>
+                    <stop offset=".5" stop-color="#fff1a0"/>
+                    <stop offset="1" stop-color="#bd7812"/>
+                </linearGradient>
+
+            </defs>
+
+
+            <g transform="rotate(-42 220 560)">
+
+                <path
+                    d="M220 420 C105 470 105 650 220 700"
+                    fill="none"
+                    stroke="url(#wood)"
+                    stroke-width="27"
+                    stroke-linecap="round"
+                />
+
+                <rect
+                    x="195"
+                    y="515"
+                    width="30"
+                    height="90"
+                    rx="12"
+                    fill="#3b2119"
+                />
+
+                <path
+                    d="M220 420 Q220 560 220 700"
+                    fill="none"
+                    stroke="#f7e7d5"
+                    stroke-width="3"
+                />
+
+            </g>
+
+
+            <g id="arrowGraphic">
+
+                <line
+                    x1="220"
+                    y1="560"
+                    x2="350"
+                    y2="560"
+                    stroke="url(#shaft)"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                />
+
+                <polygon
+                    points="350,560 322,546 328,560 322,574"
+                    fill="url(#gold)"
+                />
+
+                <path
+                    d="M225 560
+                       C213 548 205 542 195 540
+                       L202 557 Z"
+                    fill="#ff5f91"
+                />
+
+                <path
+                    d="M225 560
+                       C213 572 205 578 195 580
+                       L202 563 Z"
+                    fill="#ff5f91"
+                />
+
+            </g>
+
+        </svg>
+
+
+        <div class="a-hit" id="arrowHit">
+
+            <h1>
+                Happy Birthday ❤️
+            </h1>
+
+            <p>
+                The heart found its way.
+                <br>
+                Your little memory book is opening… ✨
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     4. DIARY
+================================================== -->
+
+<section id="diaryScreen" class="screen">
+
+    <div class="d-lotus d1">🪷</div>
+    <div class="d-lotus d2">🌸</div>
+    <div class="d-lotus d3">🪷</div>
+    <div class="d-lotus d4">🌸</div>
+
+
+    <!-- COVER -->
+
+    <div class="d-cover-wrap">
+
+        <div class="d-cover" onclick="openDiary()">
+
+            <div class="d-cover-content">
+
+                <div class="d-cover-heart">
+                    ❤️
+                </div>
+
+                <h1>
+                    Memory Diary
+                </h1>
+
+                <div class="d-tap">
+                    🪄 Tap to Open 🪄
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DIARY -->
+
+    <div class="d-area">
+
+        <div class="d-heading">
+            🌸 Memory Diary 📖💗
+        </div>
+
+
+        <div class="diary">
+
+
+            <!-- PAGE 1 -->
+
+            <div class="d-page">
+
+                <div class="d-num">
+                    Page 1
+                </div>
+
+                <h2>
+                    💗 A Little Memory 💗
+                </h2>
+
+                <div class="d-photo">
+                    <img
+                        src="photo1.jpg.jpeg"
+                        alt="Memory 1"
+                    >
+                </div>
+
+                <p>
+                    Every beautiful story starts with
+                    a smile. 🌸
+                </p>
+
+            </div>
+
+
+
+            <!-- PAGE 2 -->
+
+            <div class="d-page">
+
+                <div class="d-num">
+                    Page 2
+                </div>
+
+                <h2>
+                    🌸 Beautiful Moment
+                </h2>
+
+                <div class="d-photo">
+                    <img
+                        src="photo6.jpg.jpeg"
+                        alt="Memory 2"
+                    >
+                </div>
+
+                <p>
+                    Some moments may look simple,
+                    but they become special memories. ✨
+                </p>
+
+            </div>
+
+
+
+            <!-- PAGE 3 -->
+
+            <div class="d-page">
+
+                <div class="d-num">
+                    Page 3
+                </div>
+
+                <h2>
+                    🪷 That Smile
+                </h2>
+
+                <div class="d-photo">
+                    <img
+                        src="photo3.jpg.jpeg"
+                        alt="Memory 3"
+                    >
+                </div>
+
+                <p>
+                    A smile can make an ordinary moment
+                    feel special. 💕
+                </p>
+
+            </div>
+
+
+
+            <!-- PAGE 4 -->
+
+            <div class="d-page">
+
+                <div class="d-num">
+                    Page 4
+                </div>
+
+                <h2>
+                    ✨ Special Memory
+                </h2>
+
+                <div class="d-photo">
+                    <img
+                        src="photo4.jpg.jpeg"
+                        alt="Memory 4"
+                    >
+                </div>
+
+                <p>
+                    A memory that deserves a special
+                    place in this diary. 💗
+                </p>
+
+            </div>
+
+
+
+            <!-- PAGE 5 -->
+
+            <div class="d-page">
+
+                <div class="d-num">
+                    Page 5
+                </div>
+
+                <h2>
+                    🌷 More Memories
+                </h2>
+
+                <div class="d-photo">
+                    <img
+                        src="photo5.jpg.jpeg"
+                        alt="Memory 5"
+                    >
+                </div>
+
+                <p>
+                    Keep collecting beautiful moments
+                    wherever life takes you. 
+                </p>
+
+            </div>
+
+
+
+            <!-- PAGE 6 -->
+
+            <div class="d-page">
+
+                <div class="d-num">
+                    Page 6
+                </div>
+
+                <h2>
+                    💖 Happy Moment
+                </h2>
+
+                <div class="d-photo">
+                    <img
+                        src="photo2.jpg.jpeg"
+                        alt="Memory 6"
+                    >
+                </div>
+
+                <p>
+                    Happiness is made from little moments.
+                    🫶
+                </p>
+
+            </div>
+
+
+
+            <!-- PAGE 7 -->
+
+            <div class="d-page">
+
+                <div class="d-num">
+                    Page 7
+                </div>
+
+                <h2>
+                    🪷 Keep Smiling
+                </h2>
+
+                <div class="d-photo">
+                    <img
+                        src="photo7.jpg.jpeg"
+                        alt="Memory 7"
+                    >
+                </div>
+
+                <p>
+                    Keep smiling and keep creating
+                    beautiful moment kutty moni. 💫
+                </p>
+
+            </div>
+
+
+
+            <!-- PAGE 8 -->
+
+            <div class="d-page">
+
+                <div class="d-num">
+                    Page 8
+                </div>
+
+                <h2>
+                    🎂 Happy Birthday Moni! 💗
+                </h2>
+
+                <div class="d-photo">
+                    <img
+                        src="photo8.jpg.jpeg"
+                        alt="Memory 8"
+                    >
+                </div>
+
+                <p>
+                    May your future be filled with happiness,
+                    success and beautiful memories. 🎉
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="d-buttons">
+
+            <button
+                class="d-btn"
+                id="prevBtn"
+                onclick="previousPage()"
+                disabled
+            >
+                ← Previous
+            </button>
+
+            <button
+                class="d-btn"
+                id="nextBtn"
+                onclick="nextPage()"
+            >
+                Next Page →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     5. FINAL LETTER
+================================================== -->
+
+<section id="letterScreen" class="screen">
+
+    <div class="f-container" id="finalEnvelope">
+
+        <div class="f-title">
+            💌 A Little Birthday Surprise 💌
+        </div>
+
+        <div
+            class="envelope"
+            onclick="openLetter()"
+        >
+
+            <div class="env-back"></div>
+            <div class="env-flap"></div>
+            <div class="env-front"></div>
+
+            <div class="env-heart">
+                💗
+            </div>
+
+        </div>
+
+        <p style="color:white;margin-top:20px">
+            👆 Tap the envelope to open 💌
+        </p>
+
+    </div>
+
+
+    <div class="f-letter" id="finalLetter">
+
+                <h1>
+            🎂 Happy Birthday! 🎉
+        </h1>
+
+        <div class="f-name">
+            Dear Moni 💗
+        </div>
+
+        <p>
+            Hey Moni!! 💕
+        </p>
+
+        <p>
+            First of all, onaku en heartfelt wishes. 🪄✨
+        </p>
+
+        <p>
+            Nee un life-la innaiku-la irundhu win pannitey irukanum. 🫶🏻💫
+            Eppavum happy smile-oda, peaceful-aa, lots of good moments-oda irukanum.
+            Nee aasa pattadhellam konjam konjam-aa nadakkanum. 🪄✨
+        </p>
+
+        <p>
+            And nee 12th-la good mark score pannanum. 🫶🏻💫
+            Kandippa good college poga vendum.
+        </p>
+
+        <p>
+            Nee daily bus-la porathu nalla safe-aa irukkanum 🤌🏻
+            and daily correct time-ku sapdanum.
+        </p>
+
+        <p>
+            Un surrounding-la eppavum good people irukkanum. 🫶🏻
+        </p>
+
+        <p>
+            Sollanum-na innum neraya sollalam...
+            one page-la mudikkanum-nu paakuren, athan ithoda stop pannikiren. 💌
+        </p>
+
+        <p>
+            Intha birthday-la irundhu un kashtam ellam poidum.
+            Keep smiling always. 🪄✨😃
+        </p>
+
+        <p>
+            Once again,
+            <b>HAPPY BIRTHDAY MONI! 🎂❤️🎉</b>
+        </p>
+
+        <p class="signature">
+            Always be happy, no matter what happens...
+            <br>
+            And never stop smiling. 😃💞💌
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+
+/* ==================================================
+   SCREEN
+================================================== */
+
+function showScreen(id){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(
+            s => s.classList.remove("active")
+        );
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+}
+
+
+
+/* ==================================================
+   PASSWORD
+================================================== */
+
+const PASSWORD = "0617";
+
+let passInput = "";
+
+const pDots =
+    [...document.querySelectorAll(".p-dot")];
+
+
+function pressPass(n){
+
+    if(passInput.length >= 4){
+        return;
+    }
+
+    passInput += n;
+
+    updatePassDots();
+
+    if(passInput.length === 4){
+
+        setTimeout(
+            checkPass,
+            400
+        );
+
+    }
+
+}
+
+
+function updatePassDots(){
+
+    pDots.forEach(
+        (d,i) => {
+
+            d.classList.toggle(
+                "active",
+                i < passInput.length
+            );
+
+        }
+    );
+
+}
+
+
+function clearPass(){
+
+    passInput = "";
+
+    updatePassDots();
+
+}
+
+
+function checkPass(){
+
+    if(passInput === PASSWORD){
+
+        showScreen("birthdayScreen");
+
+        startBirthday();
+
+    }
+    else{
+
+        document
+            .getElementById("passwordPanel")
+            .style.display = "none";
+
+        document
+            .getElementById("wrongOverlay")
+            .classList.add("show");
+
+    }
+
+}
+
+
+function retryPass(){
+
+    passInput = "";
+
+    updatePassDots();
+
+    document
+        .getElementById("wrongOverlay")
+        .classList.remove("show");
+
+    document
+        .getElementById("passwordPanel")
+        .style.display = "flex";
+
+}
+
+
+
+/* ==================================================
+   BIRTHDAY
+================================================== */
+
+let birthdayStarted = false;
+
+
+function startBirthday(){
+
+    if(birthdayStarted){
+        return;
+    }
+
+    birthdayStarted = true;
+
+    const rain =
+        document.getElementById("rain");
+
+    const symbols =
+`01
+♡
+♥
+10
+01
+♡
+♥`;
+
+    for(let i=0;i<80;i++){
+
+        const d =
+            document.createElement("div");
+
+        d.className = "drop";
+
+        d.textContent = symbols;
+
+        d.style.left =
+            Math.random()*100 + "vw";
+
+        d.style.animationDuration =
+            (4.5 + Math.random()*5) + "s";
+
+        d.style.animationDelay =
+            (-Math.random()*8) + "s";
+
+        rain.appendChild(d);
+
+    }
+
+    setTimeout(
+        () => showScreen("arrowScreen"),
+        13000
+    );
+
+}
+
+
+
+/* ==================================================
+   ARROW
+================================================== */
+
+const arrow =
+    document.getElementById("arrowGraphic");
+
+const arrowCard =
+    document.getElementById("arrowCard");
+
+const arrowHint =
+    document.getElementById("arrowHint");
+
+const arrowHit =
+    document.getElementById("arrowHit");
+
+const bx = 220;
+const by = 560;
+
+const heartX = 600;
+const heartY = 220;
+
+let ax = bx;
+let ay = by;
+
+let vx = 0;
+let vy = 0;
+
+let flying = false;
+let arrowDone = false;
+
+
+arrowCard.addEventListener(
+    "pointerdown",
+    function(e){
+
+        if(flying || arrowDone){
+            return;
+        }
+
+        e.preventDefault();
+
+        launchArrow();
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+function launchArrow(){
+
+    ax = bx;
+    ay = by;
+
+    const dx =
+        heartX - bx;
+
+    const dy =
+        heartY - by;
+
+    const distance =
+        Math.hypot(dx,dy);
+
+    const speed = 5.2;
+
+    vx =
+        dx / distance * speed;
+
+    vy =
+        dy / distance * speed;
+
+    flying = true;
+
+    arrowHint.textContent = "❤️";
+
+}
+
+
+function resetArrow(){
+
+    flying = false;
+
+    ax = bx;
+    ay = by;
+
+    vx = 0;
+    vy = 0;
+
+    arrow.setAttribute(
+        "transform",
+        "translate(0 0)"
+    );
+
+    arrowHint.textContent =
+        "TAP ANYWHERE ❤️";
+
+}
+
+
+function arrowLoop(){
+
+    if(flying){
+
+        ax += vx;
+        ay += vy;
+
+        vy += .006;
+
+        const angle =
+            Math.atan2(vy,vx) *
+            180 /
+            Math.PI;
+
+        arrow.setAttribute(
+            "transform",
+            `translate(${ax-bx} ${ay-by})
+             rotate(${angle} ${bx} ${by})`
+        );
+
+
+        const r =
+            angle * Math.PI / 180;
+
+        const tipX =
+            ax + Math.cos(r)*130;
+
+        const tipY =
+            ay + Math.sin(r)*130;
+
+
+        if(
+            Math.hypot(
+                tipX-heartX,
+                tipY-heartY
+            ) < 62
+        ){
+
+            flying = false;
+
+            arrowDone = true;
+
+            arrowHit.classList.add("show");
+
+            setTimeout(
+                () => showScreen("diaryScreen"),
+                1700
+            );
+
+        }
+
+    }
+
+    requestAnimationFrame(arrowLoop);
+
+}
+
+
+resetArrow();
+
+arrowLoop();
+
+
+
+/* ==================================================
+   DIARY
+================================================== */
+
+let currentPage = 0;
+
+const pages =
+    [...document.querySelectorAll(".d-page")];
+
+const nextBtn =
+    document.getElementById("nextBtn");
+
+const prevBtn =
+    document.getElementById("prevBtn");
+
+
+function openDiary(){
+
+    document
+        .getElementById("diaryScreen")
+        .classList.add("open");
+
+}
+
+
+function nextPage(){
+
+    if(currentPage < pages.length-1){
+
+        pages[currentPage]
+            .classList.add("flipped");
+
+        currentPage++;
+
+        updateButtons();
+
+    }
+    else{
+
+        showScreen("letterScreen");
+
+    }
+
+}
+
+
+function previousPage(){
+
+    if(currentPage > 0){
+
+        currentPage--;
+
+        pages[currentPage]
+            .classList.remove("flipped");
+
+        updateButtons();
+
+    }
+
+}
+
+
+function updateButtons(){
+
+    prevBtn.disabled =
+        currentPage === 0;
+
+    nextBtn.textContent =
+        currentPage === pages.length-1
+        ? "Open Final Letter →"
+        : "Next Page →";
+
+}
+
+
+updateButtons();
+
+
+
+/* ==================================================
+   FINAL LETTER
+================================================== */
+
+function openLetter(){
+
+    document
+        .getElementById("finalEnvelope")
+        .classList.add("hide");
+
+    document
+        .getElementById("finalLetter")
+        .classList.add("open");
+
+    document
+        .getElementById("letterScreen")
+        .style.alignItems = "flex-start";
+
+}
+
 </script>
 
 </body>
