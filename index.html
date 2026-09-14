@@ -1151,7 +1151,9 @@ body{
 
 
 <body>
-
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <!-- ==================================================
      1. PASSWORD
@@ -1818,7 +1820,13 @@ body{
 
 
 <script>
+const music = document.getElementById("bgMusic");
 
+document.addEventListener(
+    "click",
+    () => music.play(),
+    { once: true }
+);
 
 /* ==================================================
    SCREEN
@@ -1843,7 +1851,7 @@ function showScreen(id){
    PASSWORD
 ================================================== */
 
-const PASSWORD = "0617";
+const PASSWORD = "3017";
 
 let passInput = "";
 
@@ -1905,7 +1913,7 @@ function checkPass(){
         showScreen("birthdayScreen");
 
         startBirthday();
-
+	document.getElementById("bgMusic").play();
     }
     else{
 
